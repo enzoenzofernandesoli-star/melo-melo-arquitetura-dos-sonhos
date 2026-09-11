@@ -136,6 +136,8 @@ h2{font-size:clamp(1.9rem,3.4vw,3.6rem);line-height:1.08}
 @media(max-width:1100px){.all-projects__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:900px){
   .hero{height:calc(100svh - 70px);min-height:650px}
+  .hero-building{background:url('/assets/hero/predio-final.png') 62% center/cover no-repeat}
+  .hero-video{display:none}
   .hero-building::after{background:linear-gradient(180deg,rgba(7,20,42,.72),rgba(7,20,42,.22) 48%,rgba(7,20,42,.86))!important}
   .hero-copy{height:100%;width:100%;padding:7rem 1rem 3rem;justify-content:flex-end}
   .hero-copy h1{font-size:clamp(3rem,11vw,5rem)}

@@ -36,14 +36,21 @@ export function ExperienciaMotion() {
     if (pathname === "/") {
       const video = document.querySelector<HTMLVideoElement>(".hero-video");
       if (video) {
-        const duracao = 15.133333;
+        const mobileHero = window.innerWidth <= 900;
         video.pause();
-        const heroTl = gsap.timeline({
-          scrollTrigger: { trigger: ".hero", start: "top top", end: () => `+=${duracao * 420}`, pin: true, scrub: .55, anticipatePin: 1, invalidateOnRefresh: true },
-        });
-        heroTl.to(video, { currentTime: duracao - .04, ease: "none", duration: 1 }, 0)
-          .to(".hero-copy", { yPercent: -42, opacity: 0, ease: "power1.in", duration: .42 }, .12)
-          .to(".hero-progress span", { scaleX: 1, ease: "none", duration: 1 }, 0);
+        if (mobileHero) {
+          const heroTl = gsap.timeline({ scrollTrigger: { trigger: ".hero", start: "top top", end: "+=720", pin: true, scrub: .38, anticipatePin: 1 } });
+          heroTl.to(".hero-copy", { yPercent: -24, opacity: 0, ease: "power1.in", duration: .82 }, .18)
+            .to(".hero-progress span", { scaleX: 1, ease: "none", duration: 1 }, 0);
+        } else {
+          const duracao = 15.133333;
+          const heroTl = gsap.timeline({
+            scrollTrigger: { trigger: ".hero", start: "top top", end: () => `+=${duracao * 420}`, pin: true, scrub: .55, anticipatePin: 1, invalidateOnRefresh: true },
+          });
+          heroTl.to(video, { currentTime: duracao - .04, ease: "none", duration: 1 }, 0)
+            .to(".hero-copy", { yPercent: -42, opacity: 0, ease: "power1.in", duration: .42 }, .12)
+            .to(".hero-progress span", { scaleX: 1, ease: "none", duration: 1 }, 0);
+        }
       }
       const pista = document.querySelector<HTMLElement>(".horizontal-track");
       if (pista) {
