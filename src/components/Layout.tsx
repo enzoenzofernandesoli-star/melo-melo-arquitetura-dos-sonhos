@@ -17,7 +17,7 @@ export function Layout() {
       <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
       <header className="header">
         <Link className="brand" to="/" aria-label="Melo & Melo — página inicial">
-          <img src="/assets/marca/logo-header.png" alt="" />
+          <img src="/assets/marca/logo-header-transparente.png" alt="" />
           <span><strong>Melo & Melo</strong><small>Consultoria Imobiliária</small></span>
         </Link>
         <button className="menu-button" type="button" aria-label={aberto ? "Fechar menu" : "Abrir menu"} aria-expanded={aberto} onClick={() => setAberto(!aberto)}>
