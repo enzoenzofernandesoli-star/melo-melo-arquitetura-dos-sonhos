@@ -46,8 +46,9 @@ export function ExperienciaMotion() {
           .to(".hero-progress span", { scaleX: 1, ease: "none", duration: 1 }, 0);
       }
       const pista = document.querySelector<HTMLElement>(".horizontal-track");
-      if (pista && window.innerWidth > 900) {
-        const galeriaTl = gsap.timeline({ scrollTrigger: { trigger: ".horizontal-section", start: "top top", end: () => `+=${Math.max(2800, pista.scrollWidth * 1.55)}`, pin: true, scrub: .65, invalidateOnRefresh: true } });
+      if (pista) {
+        const mobile = window.innerWidth <= 900;
+        const galeriaTl = gsap.timeline({ scrollTrigger: { trigger: ".horizontal-section", start: "top top", end: () => `+=${Math.max(mobile ? 3600 : 2800, pista.scrollWidth * (mobile ? 1.75 : 1.55))}`, pin: true, scrub: mobile ? .5 : .65, anticipatePin: 1, invalidateOnRefresh: true } });
         galeriaTl.to(pista, { x: () => -Math.max(0, pista.scrollWidth - (pista.parentElement?.clientWidth ?? window.innerWidth)), ease: "none", duration: .64 })
           .to(".horizontal-intro", { opacity: 0, xPercent: -24, duration: .12, ease: "power2.in" }, .58)
           .fromTo(".catalogue-expansion", { clipPath: "circle(0% at 88% 52%)" }, { clipPath: "circle(150% at 88% 52%)", duration: .36, ease: "power2.inOut" }, .64)

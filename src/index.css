@@ -143,6 +143,29 @@ h2{font-size:clamp(1.9rem,3.4vw,3.6rem);line-height:1.08}
   .all-projects__heading{grid-template-columns:1fr}
   .all-projects__heading .eyebrow{grid-column:auto}
   .all-projects__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .catalogue-gateway{display:none}.catalogue-expansion{display:none}
+  .horizontal-section{height:100svh;min-height:0;display:block;padding:0;overflow:hidden}
+  .horizontal-intro{position:absolute;z-index:4;top:6.5rem;left:1rem;right:1rem;margin:0;padding:0;pointer-events:none}
+  .horizontal-intro h2{max-width:430px;font-size:clamp(2.6rem,10vw,4rem)!important;margin:.8rem 0 0}
+  .horizontal-intro p{display:none}
+  .horizontal-viewport{position:absolute;left:0;right:0;bottom:1.25rem;height:63svh;overflow:visible;padding:0}
+  .horizontal-track{height:100%;width:max-content;overflow:visible;scroll-snap-type:none;padding:0 1rem;gap:1rem;will-change:transform}
+  .horizontal-card{height:100%;flex:0 0 82vw;scroll-snap-align:none}
+  .horizontal-card .property-card{height:100%;display:flex;flex-direction:column}
+  .horizontal-card .image-placeholder{aspect-ratio:auto;height:52%}
+  .horizontal-card .property-card__body{display:flex;flex-direction:column;flex:1}
+  .horizontal-card .property-card__footer{margin-top:auto}
+  .catalogue-gateway{display:flex;flex:0 0 82vw;min-height:100%;padding:1.5rem}
+  .catalogue-expansion{display:grid;grid-template-columns:1fr;grid-template-rows:150px minmax(0,1fr);gap:.75rem;padding:5.4rem 1rem .8rem}
+  .catalogue-expansion__copy{min-height:0;overflow:hidden}
+  .catalogue-expansion__copy strong{font-size:clamp(2.45rem,10.5vw,3.8rem);line-height:.9;margin-top:.45rem}
+  .catalogue-expansion__mosaic{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,minmax(0,1fr));height:100%;min-height:0;gap:.35rem;transform:rotate(-1deg)}
+  .catalogue-expansion__mosaic img{min-height:0}
 }
-@media(max-width:560px){.all-projects__grid{grid-template-columns:1fr}.all-projects__heading h2{font-size:2.7rem}}
+@media(max-width:560px){
+  .hero-copy{padding-bottom:4rem}
+  .hero-copy h1{font-size:clamp(2.8rem,12vw,3.8rem)}
+  .hero-copy p{max-width:300px}
+  .hero-progress{bottom:1rem}
+  .all-projects__grid{grid-template-columns:1fr}.all-projects__heading h2{font-size:2.7rem}
+  .horizontal-viewport{height:61svh}
+}
